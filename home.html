@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Pagina web de joaquin</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+          <img src="assets/images/arma-re.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+          <li class="dropdown">
+            <a href="home.html">Inicio</a>
+          </li>
+          <li class="dropdown">
+            <a href="header/servicios.html">Servicios</a>
+          </li>
+          <li class="dropdown"><a href="header/nosotros.html">Nosotros</a></li>
+          <li class="dropdown"><a href="header/contactos.html">Contacto</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Buscar productos..." class="search-input">
+            <button class="search-btn">🔍</button>
+          </div>
+        <button class="menu-toggle">☰</button>
+           <!-- Botón de Carrito -->
+  <div class="cart-container">
+    <button class="cart-btn">
+      🛒 <span class="cart-count">0</span>
+    </button>
+  </div>
+  <div class="cart-menu hidden">
+    <h2>Carrito de Compras</h2>
+    <ul class="cart-items"></ul>
+    <div class="cart-total">
+      <strong>Total: </strong><span class="total-amount">$0</span>
+    </div>
+    <button class="checkout-btn">Ir a Pagar</button>
+    <button class="close-cart">Cerrar</button>
+  </div>
+      </nav>
+      <div class="slider">
+        <div class="slides">
+          <!-- Cada imagen es un slide -->
+          <div class="slide">
+            <img src="assets/images/7_2.png" alt="Imagen 1">
+          </div>
+          <div class="slide">
+            <img src="assets/images/12_2.png" alt="Imagen 2">
+          </div>
+          <div class="slide">
+            <img src="assets/images/5_3.png" alt="Imagen 3">
+          </div>
+        </div>
+        <!-- Botones de navegación -->
+        <button class="prev" onclick="moveSlide(-1)">❮</button>
+        <button class="next" onclick="moveSlide(1)">❯</button>
+      </div>
+      <section class="categories">
+        <div class="categories-header">
+          <h2>Categorías</h2>
+        </div>
+        <div class="categories-container" > 
+          <!-- Categoría 1 -->
+          <a href="categorias/pack_armas.html" class="category-card">
+            <h3>Ofertas Packs Armas</h3>
+          </a>
+          <!-- Categoría 2 -->
+          <a href="categorias/rifles.html" class="category-card">
+            <h3>Rifles</h3>
+          </a>
+          <!-- Categoría 3 -->
+          <a href="categorias/carabinas.html" class="category-card">
+            <h3>Carabinas .22 LR</h3>
+          </a>
+          <!-- Categoría 4 -->
+          <a href="categorias/escopetas.html" class="category-card">
+            <h3>Escopetas de caza y tiro</h3>
+          </a>
+          <!-- Categoría 5 -->
+          <a href="categorias/pistolas.html" class="category-card">
+            <h3>Pistolas</h3>
+          </a>
+          <!-- Categoría 6 -->
+          <a href="categorias/armas_avancarga.html" class="category-card">
+            <h3>Armas Avancarga</h3>
+          </a>
+           <!-- Categoría 7 -->
+           <a href="categorias/detonadoras.html" class="category-card">
+            <h3>Detonadoras</h3>
+           </a>
+           <!-- Categoría 8 -->
+           <a href="categorias/cuchilleria.html" class="category-card">
+            <h3>Cuchillería</h3>
+           </a>
+        </div>
+      </section>
+    <section class="catalog">
+      <h2 class="catalog-title">Nuestro Catálogo</h2>
+      <div class="catalog-container">
+        <!-- Tarjeta 1 -->
+        <div class="card product" data-id="1" data-name="Carabina semiautomática Mauser" data-price="1500">
+          <img src="assets/images/carabinav.jpg" alt="Producto 1" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Carabina semiautomática Mauser</h3>
+            <p class="card-description"> sta carabina es plegable desde su culata, y además es apta para zurdos y diestros. </p>
+            <button class="buy-btn">Agregar al carrito</button>
+          </div>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="card product" data-id="2" data-name="Pistola Smith & Wesson M2.0" data-price="1200">
+          <img src="assets/images/pistola-smith.jpg" alt="Producto 2" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Pistola Smith & Wesson M2.0 metal NTS 4.25"</h3>
+            <p class="card-description">Esta pistola trae 4 lomos de empuñadura intercambiables de diferentes tamaños.</p>
+            <button class="buy-btn">Agregar al carrito</button>
+          </div>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="card product" data-id="3" data-name="Rifle de cerrojo Ruger American Ranch" data-price="1200">
+          <img src="assets/images/rifle-de-cerrojo.jpg" alt="Producto 3" class="card-img">
+          <div class="card-content">
+            <h3 class="card-title">Rifle de cerrojo Ruger American Ranch </h3>
+            <p class="card-description">El modelo Ranch, una extensión de la familia Ruger American, es compacto, preciso y adaptable. </p>
+            <button class="buy-btn">Agregar al carrito</button>
+          </div>
+        </div>
+        <!-- Tarjeta 4 -->
+    <div class="card product data-id="4" data-name="Navaja Gerber Mansfield Natural" data-price="1200">
+      <img src="assets/images/navaja-gerber-mansfield-natural.jpg" alt="Producto 4" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Navaja Gerber Mansfield Natural</h3>
+        <p class="card-description">Existe un cuidadoso equilibrio entre el pasado y el presente, y Mansfield combina lo mejor de ambos mundos.</p>
+        <button class="buy-btn">Agregar al carrito</button>
+      </div>
+    </div>
+    <!-- Tarjeta 5 -->
+    <div class="card product" data-id="5" data-name="Escopeta semiautomática Mossberg 940" data-price="1200">
+      <img src="assets/images/esco.jpg" alt="Producto 5" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Escopeta semiautomática Mossberg 940</h3>
+        <p class="card-description">Es un arma bien equilibrada, con un peso relativamente liviano.</p>
+        <button class="buy-btn">Agregar al carrito</button>
+      </div>
+    </div>
+    <!-- Tarjeta 6 -->
+    <div class="card product data-id="6" data-name="Pistola Ruger Mark IV Target 5.5" - 22 LR" data-price="1200">
+      <img src="assets/images/pistola-ruger-mark-iv-target-22-lr.jpg" alt="Producto 6" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Pistola Ruger Mark IV Target 5.5" - 22 LR</h3>
+        <p class="card-description">Con un diseño muy representativo a nivel mundial que evoca la clásica pistola Mark III</p>
+        <button class="buy-btn">Agregar al carrito</button>
+      </div>
+    </div>
+    <!-- Tarjeta 7 -->
+    <div class="card product" data-id="7" data-name="Revólver Ruger GP100 6 - 357 Mag" data-price="1200">
+      <img src="assets/images/revolver-ruger-gp100-6-357-mag.jpg" alt="Producto 7" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Revólver Ruger GP100 6" - 357 Mag</h3>
+        <p class="card-description">Con cañón de 6" de longitud, que cuenta con una amplia trayectoria histórica gracias a su diseño.</p>
+        <button class="buy-btn">Agregar al carrito</button>
+      </div>
+    </div>
+    <!-- Tarjeta 8 -->
+    <div class="card product" data-id="8" data-name="PRifle de cerrojo Mossberg Patriot Night Train - 308 win." data-price="1200">
+      <img src="assets/images/rifle-de-cerrojo-mossberg-patriot-night-train-308-win.jpg" alt="Producto 8" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Rifle de cerrojo Mossberg Patriot Night Train - 308 win.</h3>
+        <p class="card-description">El Mossberg Patriot Night Train es un rifle de diseño táctico que funciona mediante sistema de cerrojo. </p>
+        <button class="buy-btn">Agregar al carrito</button>
+      </div>
+    </div>
+    <!-- Tarjeta 9 -->
+    <div class="card product" data-id="9" data-name="Carabina semiautomática desmontable Ruger PC - 9 Parabellum" data-price="1200">
+      <img src="assets/images/carabina-semiautomatica-desmontable-ruger-pc-9pb.jpg" alt="Producto 9" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Carabina semiautomática desmontable Ruger PC - 9 Parabellum</h3>
+        <p class="card-description">La Ruger PC es una carabina de tipo semiautomática que dispara munición de calibre 9mm Pb..</p>
+        <button class="buy-btn">Agregar al carrito</button>
+      </div>
+      </div>
+         <!-- Tarjeta 10 -->
+    <div class="card product" data-id="10" data-name="Revólver Smith & Wesson 17 Masterpiece 6 - 22 lr" data-price="1200">
+      <img src="assets/images/revolver-smith-wesson-17-masterpiece-6-22-lr.jpg" alt="Producto 10" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Revólver Smith & Wesson 17 Masterpiece 6" - 22 lr</h3>
+        <p class="card-description">El S&W 17 Masterpiece es un revólver de tiro perfecto para los amantes de los clásicos.</p>
+        <button class="buy-btn">Agregar al carrito</button>
+      </div>
+      </div>
+          <!-- Tarjeta 11 -->
+    <div class="card product" data-id="11" data-name="Hacha Schrade Bedrock Axe" data-price="1200">
+      <img src="assets/images/Hacha-SCHRADE-bedrock-axe.jpg" alt="Producto 11" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Hacha Schrade Bedrock Axe
+        </h3>
+        <p class="card-description">Hacha para toda ocasion por su gran resistencia</p>
+        <button class="buy-btn">Agregar al carrito</button>
+      </div>
+      </div>
+            <!-- Tarjeta 12 -->
+    <div class="card product" data-id="12" data-name="Navaja Old Timer premium trapper 69" data-price="1200">
+      <img src="assets/images/Navaja-Premiun-Trapper-69OT-OLD-TIMER.jpg" alt="Producto 12" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Navaja Old Timer premium trapper 69</h3>
+        <p class="card-description">Navaja de bolsillo de calidad Premium Trapper. Acero inoxidable con alto contenido de carbono.</p>
+        <button class="buy-btn">Agregar al carrito</button>>
+      </div>
+      </div>
+    </section>
+    <section class="hero-image-text">
+      <div class="hero-content">
+        <h1>Expertos en Armas y Servicios</h1>
+        <p>Ofrecemos soluciones personalizadas para entusiastas y profesionales del sector. Calidad, seguridad y experiencia en cada servicio.</p>
+        <a href="header/servicios.html" class="btn-explore">Explorar Servicios</a>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Sección de información -->
+        <div class="footer-about">
+          <h3>Sobre Nosotros</h3>
+          <p>Somos una empresa dedicada a ofrecer tecnología innovadora y servicios de calidad para nuestros clientes.</p>
+        </div>
+        <!-- Sección de enlaces -->
+        <div class="footer-links">
+          <h3>Enlaces Útiles</h3>
+          <ul>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="header/servicios.html">Servicios</a></li>
+            <li><a href="header/contactos.html">Contacto</a></li>
+          </ul>
+        </div>
+        <!-- Sección de redes sociales -->
+        <div class="footer-socials">
+          <h3>Síguenos</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/joaquinfernando.medinagonzales/" target="_blank"><img src="icons/facebook-svgrepo-com.svg" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="icons/twitter-svgrepo-com.svg" alt="Twitter"></a>
+            <a href="https://www.instagram.com/thejoamed/" target="_blank"><img src="icons/instagram-svgrepo-com.svg" alt="Instagram"></a>
+          </div>
+        </div>
+      </div>
+      <!-- Derechos de autor -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 JOAGUN'S. Todos los derechos reservados.</p>
+      </div>
+    </footer>    
+    <script src='js/script.js'></script>
+</body>
+</html>
