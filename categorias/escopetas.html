@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 1</title>
+  <link rel="stylesheet" href="/css/categorias.css">
+  <link rel="stylesheet" href="/css/escopetas.css">
+</head>
+<body>
+  <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+  
+  <!-- Introducción de la Categoría -->
+  <div class="category-intro">
+    <div class="intro-text">
+      <h1 class="intro-title">Explora Nuestra Selección de Escopetas</h1>
+      <p class="intro-description">
+        Descubre nuestra selección de escopetas de alta calidad, ideales para caza, tiro deportivo y defensa personal. Diseñadas para ofrecer potencia, precisión y fiabilidad en cualquier situación.
+      </p>
+      <p class="intro-highlight">
+        Escopetas de marcas líderes, con la mejor tecnología y diseño innovador, te esperan.
+      </p>
+    </div>
+    <div class="intro-image">
+      <img src="/assets/images/esco-1 (1).png" alt="Colección de Rifles">
+    </div>
+  </div>
+
+    <!-- Productos -->
+    <div id="products-container" class="products-container">
+        <div class="product" data-name="Escopeta de Caza Remington 870" data-id="1" data-price="600.00">
+            <img src="/assets/images/escopeta1.jpg" alt="Escopeta de Caza Remington 870" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">Escopeta de Caza Remington 870</h3>
+                <p class="card-description">Clásica y confiable, perfecta para la caza mayor y menor.</p>
+                <p class="card-price">S/600.00</p>
+                <button class="buy-btn">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="Escopeta Mossberg 500" data-id="2" data-price="550.00">
+            <img src="/assets/images/escopeta2.jpg" alt="Escopeta Mossberg 500" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">Escopeta Mossberg 500</h3>
+                <p class="card-description">Versátil y duradera, ideal para cualquier entorno.</p>
+                <p class="card-price">S/550.00</p>
+                <button class="buy-btn">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="Escopeta Benelli M4" data-id="3" data-price="1500.00">
+            <img src="/assets/images/escopeta3.png" alt="Escopeta Benelli M4" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">Escopeta Benelli M4</h3>
+                <p class="card-description">Tecnología de punta y precisión militar en una escopeta.</p>
+                <p class="card-price">S/1500.00</p>
+                <button class="buy-btn">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="Escopeta Winchester SXP" data-id="4" data-price="800.00">
+            <img src="/assets/images/escopeta4.jpg" alt="Escopeta Winchester SXP" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">Escopeta Winchester SXP</h3>
+                <p class="card-description">Rápida y precisa, una opción perfecta para tiradores exigentes.</p>
+                <p class="card-price">S/800.00</p>
+                <button class="buy-btn">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+    <div id="footer-container"></div> <!-- Aquí se insertará el footer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('footer_c.html')
+          .then(response => {
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            return response.text();
+          })
+          .then(data => document.getElementById('footer-container').innerHTML = data)
+          .catch(error => console.error('Error cargando el footer:', error));
+      });
+    </script>
+  <script src="/js/script_categorias.js"></script> <!-- Si tienes funcionalidades adicionales -->
+</body>
+</html>

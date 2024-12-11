@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 1</title>
+  <link rel="stylesheet" href="/css/categorias.css">
+  <link rel="stylesheet" href="/css/pistolas.css">
+</head>
+<body>
+  <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+  <div class="category-intro">
+    <div class="intro-text">
+      <h1 class="intro-title">Bienvenido a Nuestra Colección de Pistolas</h1>
+      <p class="intro-description">
+        En esta sección encontrarás una selección de pistolas diseñadas para satisfacer las necesidades de todos los entusiastas, desde principiantes hasta expertos. 
+        Ya sea que busques precisión, diseño ergonómico o innovación tecnológica, nuestras pistolas garantizan calidad, desempeño y seguridad.
+      </p>
+      <p class="intro-highlight">
+        Explora modelos ideales para uso deportivo, defensa personal o coleccionismo, respaldados por marcas reconocidas y estándares de clase mundial.
+      </p>
+    </div>
+    <div class="intro-image">
+      <img src="/assets/images/pistol-removebg-preview.png" alt="Colección de Pistolas">
+    </div>
+  </div>
+    <div id="products-container" class="products-container">
+      <!-- Producto 1 -->
+      <div class="product" data-name="Pistola Modelo 1" data-id="1" data-price="500">
+        <img src="/assets/images/pistola1.jpg" alt="Pistola Modelo 1" class="card-img">
+        <div class="card-content">
+          <h3 class="card-title">Pistola Smith & Wesson</h3>
+          <p class="card-description">Pistola semi-automática de alta precisión y excelente ergonomía.</p>
+          <p class="card-price">S/500</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+        </div>
+      </div>
+      
+      <!-- Producto 2 -->
+      <div class="product" data-name="Pistola Modelo 2" data-id="2" data-price="700">
+        <img src="/assets/images/pistola2.jpg" alt="Pistola Modelo 2" class="card-img">
+        <div class="card-content">
+          <h3 class="card-title">Pistola Walther Q5</h3>
+          <p class="card-description">Diseñada para un uso prolongado, ideal para aficionados y expertos.</p>
+          <p class="card-price">S/700</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+        </div>
+      </div>
+     <!-- Producto 3 -->
+     <div class="product" data-name="Pistola Modelo 3" data-id="3" data-price="700">
+      <img src="/assets/images/pistola3.jpg" alt="Pistola Modelo 2" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Pistola Walther PDP</h3>
+        <p class="card-description">Diseñada para un uso prolongado, ideal para aficionados y expertos.</p>
+        <p class="card-price">S/700</p>
+        <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+    </div>
+     <!-- Producto 4 -->
+     <div class="product" data-name="Pistola Modelo 4" data-id="4" data-price="700">
+      <img src="/assets/images/pistola4.jpg" alt="Pistola Modelo 2" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Pistola Ruger SR</h3>
+        <p class="card-description">Diseñada para un uso prolongado, ideal para aficionados y expertos.</p>
+        <p class="card-price">S/700</p>
+        <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+    </div>
+    </div>
+    
+
+ 
+    <div id="footer-container"></div> <!-- Aquí se insertará el footer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('footer_c.html')
+          .then(response => {
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            return response.text();
+          })
+          .then(data => document.getElementById('footer-container').innerHTML = data)
+          .catch(error => console.error('Error cargando el footer:', error));
+      });
+    </script>
+  <script src="/js/script_categorias.js"></script> <!-- Si tienes funcionalidades adicionales -->
+</body>
+</html>

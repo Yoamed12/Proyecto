@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 1</title>
+  <link rel="stylesheet" href="/css/categorias.css">
+  <link rel="stylesheet" href="/css/cuchilleria.css">
+</head>
+<body>
+  <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+  
+  <!-- Introducción de la Categoría -->
+<div class="category-intro">
+  <div class="intro-text">
+      <h1 class="intro-title">Explora Nuestra Selección de Cuchillería</h1>
+      <p class="intro-description">
+          Descubre nuestra selección de cuchillos de alta calidad, ideales para uso profesional, deportivo y coleccionismo. Diseñados para ofrecer precisión, durabilidad y un rendimiento excepcional.
+      </p>
+      <p class="intro-highlight">
+          Cuchillos de marcas reconocidas, con diseños innovadores y materiales de primera, te esperan.
+      </p>
+  </div>
+  <div class="intro-image">
+      <img src="/assets/images/cuchillos (1) (1).png" alt="Colección de Cuchillos">
+  </div>
+</div>
+
+<!-- Productos -->
+<div id="products-container" class="products-container">
+  <div class="product" data-name="Cuchillo Victorinox Huntsman" data-id="1" data-price="85.00">
+      <img src="/assets/images/cuchillo1.jpg" alt="Cuchillo Victorinox Huntsman" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Cuchillo Victorinox Huntsman</h3>
+          <p class="card-description">Navaja multiherramienta clásica suiza, perfecta para camping y aventuras.</p>
+          <p class="card-price">S/85.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+
+  <div class="product" data-name="Cuchillo Táctico Gerber StrongArm" data-id="2" data-price="120.00">
+      <img src="/assets/images/cuchillo2.jpg" alt="Cuchillo Táctico Gerber StrongArm" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Cuchillo Táctico Gerber StrongArm</h3>
+          <p class="card-description">Cuchillo militar de alta resistencia, diseñado para condiciones extremas.</p>
+          <p class="card-price">S/120.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+
+  <div class="product" data-name="Cuchillo de Cocina Wüsthof Classic" data-id="3" data-price="180.00">
+      <img src="/assets/images/cuchillo3.jpg" alt="Cuchillo de Cocina Wüsthof Classic" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Cuchillo de Cocina Wüsthof Classic</h3>
+          <p class="card-description">Cuchillo profesional alemán, precisión y equilibrio perfectos para chef.</p>
+          <p class="card-price">S/180.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+
+  <div class="product" data-name="Cuchillo Supervivencia Morakniv Companion" data-id="4" data-price="55.00">
+      <img src="/assets/images/cuchillo4.jpg" alt="Cuchillo Supervivencia Morakniv Companion" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Cuchillo Supervivencia Morakniv Companion</h3>
+          <p class="card-description">Cuchillo sueco ultra resistente, ideal para actividades al aire libre.</p>
+          <p class="card-price">S/55.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+</div>
+  
+    <div id="footer-container"></div> <!-- Aquí se insertará el footer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('footer_c.html')
+          .then(response => {
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            return response.text();
+          })
+          .then(data => document.getElementById('footer-container').innerHTML = data)
+          .catch(error => console.error('Error cargando el footer:', error));
+      });
+    </script>
+  <script src="/js/script_categorias.js"></script> <!-- Si tienes funcionalidades adicionales -->
+</body>
+</html>

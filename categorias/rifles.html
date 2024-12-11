@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 1</title>
+  <link rel="stylesheet" href="/css/categorias.css">
+  <link rel="stylesheet" href="/css/rifles.css">
+</head>
+<body>
+  <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+  <!-- Introducción de la Categoría -->
+  <div class="category-intro">
+    <div class="intro-text">
+      <h1 class="intro-title">Explora Nuestra Selección de Rifles</h1>
+      <p class="intro-description">
+        Descubre nuestra amplia gama de rifles diseñados para proporcionar precisión, potencia y fiabilidad. 
+        Ya sea para caza, tiro deportivo o defensa, cada modelo ha sido seleccionado cuidadosamente para ofrecer el máximo rendimiento.
+      </p>
+      <p class="intro-highlight">
+        Rifles de marcas líderes, con la mejor tecnología y diseño innovador, te esperan.
+      </p>
+    </div>
+    <div class="intro-image">
+      <img src="/assets/images/rifles__1_-removebg-preview.png" alt="Colección de Rifles">
+    </div>
+  </div>
+
+ 
+  <div id="products-container" class="products-container">
+    <div class="product" data-name="Rifle de cerrojo" data-id="1" data-price="700">
+      <img src="/assets/images/rifle-de-cerrojo-ruger-american-ranch-300-aac-blk.jpg" alt="Rifle de cerrojo Ruger American Ranch" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Rifle de cerrojo</h3>
+        <p class="card-description">El modelo Ranch es compacto, preciso y adaptable.</p>
+        <p class="card-price">S/500</p>
+        <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+    </div>
+
+    <div class="product" data-name="Rifle semiautomático" data-id="2" data-price="700">
+      <img src="/assets/images/rifle-semiautomatico-smith-and-wesson-response-9mm-parabellum.jpg" alt="Rifle Semi-Automático" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Rifle Semi-Automático</h3>
+        <p class="card-description">Ideal para cazadores y tiradores deportivos, con un diseño robusto.</p>
+        <p class="card-price">S/500</p>
+        <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+    </div>
+
+    <div class="product" data-name="Rifle de alta precisión" data-id="3" data-price="700">
+      <img src="/assets/images/rifle-de-cerrojo-savage-110-elite-precision-308-win.jpg" alt="Rifle de Alta Precisión" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Rifle de Alta Precisión</h3>
+        <p class="card-description">Perfecto para tiro a larga distancia con extrema exactitud.</p>
+        <p class="card-price">S/500</p>
+        <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+    </div>
+
+    <div class="product" data-name="Rifle de caza" data-id="4" data-price="700">
+      <img src="/assets/images/rifle-de-cerrojo-ruger-hawkeye-long-range-target-300-win-mag_1 (1).jpg" alt="Rifle de Caza" class="card-img">
+      <div class="card-content">
+        <h3 class="card-title">Rifle de Caza</h3>
+        <p class="card-description">Un compañero confiable para tus expediciones de caza.</p>
+        <p class="card-price">S/500</p>
+        <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-container"></div> <!-- Aquí se insertará el footer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('footer_c.html')
+        .then(response => {
+          if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+          return response.text();
+        })
+        .then(data => document.getElementById('footer-container').innerHTML = data)
+        .catch(error => console.error('Error cargando el footer:', error));
+    });
+  </script>
+  <script src="/js/script_categorias.js"></script> <!-- Si tienes funcionalidades adicionales -->
+</body>
+</html>

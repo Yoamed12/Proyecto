@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 1</title>
+  <link rel="stylesheet" href="/css/categorias.css">
+  <link rel="stylesheet" href="/css/carabinas.css">
+</head>
+<body>
+  <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+  
+ <!-- Introducción de la Categoría -->
+<div class="category-intro">
+  <div class="intro-text">
+      <h1 class="intro-title">Explora Nuestra Selección de Carabinas</h1>
+      <p class="intro-description">
+          Descubre nuestra colección de carabinas de precisión, diseñadas para cazadores, deportistas y entusiastas del tiro. Ofrecemos modelos de alta calidad que combinan precisión, potencia y confiabilidad.
+      </p>
+      <p class="intro-highlight">
+          Carabinas de marcas líderes con tecnología de vanguardia y diseños innovadores te esperan.
+      </p>
+  </div>
+  <div class="intro-image">
+      <img src="/assets/images/artemis-carabina (1).png" alt="Colección de Carabinas">
+  </div>
+</div>
+
+<!-- Productos -->
+<div id="products-container" class="products-container">
+  <div class="product" data-name="Carabina Ruger 10/22" data-id="1" data-price="350.00">
+      <img src="/assets/images/carabina1.jpg" alt="Carabina Ruger 10/22" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Carabina Ruger 10/22</h3>
+          <p class="card-description">Clásica carabina semiautomática calibre .22, ideal para tiro deportivo y práctica.</p>
+          <p class="card-price">S/350.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+
+  <div class="product" data-name="Carabina Marlin Model 336" data-id="2" data-price="700.00">
+      <img src="/assets/images/carabinav.jpg" alt="Carabina Marlin Model 336" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Carabina Marlin Model 336</h3>
+          <p class="card-description">Carabina de palanca clásica, perfecta para caza de venado y grande fauna.</p>
+          <p class="card-price">S/700.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+
+  <div class="product" data-name="Carabina Tikka T3" data-id="3" data-price="900.00">
+      <img src="/assets/images/carabina3.jpg" alt="Carabina Tikka T3" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Carabina Tikka T3</h3>
+          <p class="card-description">Carabina de precisión finlandesa, diseñada para tiradores exigentes y cazadores profesionales.</p>
+          <p class="card-price">S/900.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+
+  <div class="product" data-name="Carabina Winchester Model 70" data-id="4" data-price="750.00">
+      <img src="/assets/images/carabina4.jpg" alt="Carabina Winchester Model 70" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Carabina Winchester Model 70</h3>
+          <p class="card-description">Conocida como "El Rifle del Fusilero", diseño clásico con precisión moderna.</p>
+          <p class="card-price">S/750.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+</div>
+
+ 
+    <div id="footer-container"></div> <!-- Aquí se insertará el footer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('footer_c.html')
+          .then(response => {
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            return response.text();
+          })
+          .then(data => document.getElementById('footer-container').innerHTML = data)
+          .catch(error => console.error('Error cargando el footer:', error));
+      });
+    </script>
+ <script src="/js/script_categorias.js"></script> <!-- Si tienes funcionalidades adicionales -->
+</body>
+</html>

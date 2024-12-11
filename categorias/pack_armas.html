@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 1</title>
+  <link rel="stylesheet" href="/css/categorias.css">
+  <link rel="stylesheet" href="/css/pack_armas.css">
+</head>
+<body>
+  <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+   <div class="category-container">
+    <!-- Introducción -->
+    <section class="category-intro">
+        <h1>Pack de Armas</h1>
+        <p>Explora nuestros exclusivos packs de armas cuidadosamente seleccionados para satisfacer las necesidades de tiradores y coleccionistas. Cada pack combina eficiencia, versatilidad y potencia en un solo conjunto. Ideal para cualquier entusiasta de las armas de fuego.</p>
+    </section>
+
+    <!-- Productos -->
+    <div id="products-container" class="products-container">
+        <div class="product" data-name="Pack de Defensa Personal" data-id="1" data-price="500.00">
+            <img src="/assets/images/pack1.jpg" alt="Pack de Defensa Personal" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">Pack de Defensa Personal</h3>
+                <p class="card-description">Incluye pistola compacta y accesorios de seguridad como fundas y cargadores adicionales.</p>
+                <p class="card-price">S/500.00</p>
+                <button class="buy-btn">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="Pack de Caza" data-id="2" data-price="1200.00">
+            <img src="/assets/images/pack2.jpg" alt="Pack de Caza" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">Pack de Caza</h3>
+                <p class="card-description">Perfecto para caza mayor, incluye rifle de largo alcance y municiones.</p>
+                <p class="card-price">S/1200.00</p>
+                <button class="buy-btn">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="Pack Táctico" data-id="3" data-price="2000.00">
+            <img src="/assets/images/pack3.jpg" alt="Pack Táctico" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">Pack Táctico</h3>
+                <p class="card-description">Equipado con fusil de asalto y accesorios tácticos como miras y linternas.</p>
+                <p class="card-price">S/2000.00</p>
+                <button class="buy-btn">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="product" data-name="Pack Profesional" data-id="4" data-price="3500.00">
+            <img src="/assets/images/pack4.jpg" alt="Pack Profesional" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">Pack Profesional</h3>
+                <p class="card-description">Incluye armas avanzadas y equipo diseñado para profesionales de alto rendimiento.</p>
+                <p class="card-price">S/3500.00</p>
+                <button class="buy-btn">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div id="footer-container"></div> <!-- Aquí se insertará el footer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('footer_c.html')
+          .then(response => {
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            return response.text();
+          })
+          .then(data => document.getElementById('footer-container').innerHTML = data)
+          .catch(error => console.error('Error cargando el footer:', error));
+      });
+    </script>
+  <script src="/js/script_categorias.js"></script> <!-- Si tienes funcionalidades adicionales -->
+</body>
+</html>

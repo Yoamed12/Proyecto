@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 1</title>
+  <link rel="stylesheet" href="/css/categorias.css">
+  <link rel="stylesheet" href="/css/armas_avancarga.css">
+</head>
+<body>
+  <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+  
+  <!-- Introducción de la Categoría -->
+<div class="category-intro">
+  <div class="intro-text">
+      <h1 class="intro-title">Explora Nuestra Colección de Armas de Avancarga</h1>
+      <p class="intro-description">
+          Sumérgete en la historia con nuestra selección de armas de avancarga, réplicas precisas que capturan la esencia de la artillería tradicional. Perfectas para coleccionistas, reenactores y entusiastas de la historia militar.
+      </p>
+      <p class="intro-highlight">
+          Armas que transportan a otra época, fabricadas con métodos tradicionales y atención al detalle histórico.
+      </p>
+  </div>
+  <div class="intro-image">
+      <img src="/assets/images/pistol-1442008_640 (1) (1).png" alt="Colección de Armas de Avancarga">
+  </div>
+</div>
+
+<!-- Productos -->
+<div id="products-container" class="products-container">
+  <div class="product" data-name="Mosquete Brown Bess" data-id="1" data-price="1200.00">
+      <img src="/assets/images/avancarga1.jpg" alt="Mosquete Brown Bess" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Mosquete Brown Bess</h3>
+          <p class="card-description">Réplica histórica del legendario mosquete británico, utilizado durante la Guerra de Independencia y las Guerras Napoleónicas.</p>
+          <p class="card-price">S/1,200.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+
+  <div class="product" data-name="Pistola de Chispa Napoleónica" data-id="2" data-price="850.00">
+      <img src="/assets/images/avancarga2.jpg" alt="Pistola de Chispa Napoleónica" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Pistola de Chispa Napoleónica</h3>
+          <p class="card-description">Elegante pistola de oficial francesa, réplica precisa de los modelos utilizados durante las campañas de Napoleón.</p>
+          <p class="card-price">S/850.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+
+  <div class="product" data-name="Trabuco Español Colonial" data-id="3" data-price="1500.00">
+      <img src="/assets/images/avancarga3.jpg" alt="Trabuco Español Colonial" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Trabuco Español Colonial</h3>
+          <p class="card-description">Réplica auténtica del tradicional trabuco español, utilizado en las colonias americanas durante los siglos XVIII y XIX.</p>
+          <p class="card-price">S/1,500.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+
+  <div class="product" data-name="Fusil Charleville Francés" data-id="4" data-price="1100.00">
+      <img src="/assets/images/avancarga4.jpg" alt="Fusil Charleville Francés" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Fusil Charleville Francés</h3>
+          <p class="card-description">Réplica del famoso fusil francés, fundamental durante la Guerra de Independencia de los Estados Unidos.</p>
+          <p class="card-price">S/1,100.00</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+</div>
+
+  
+    <div id="footer-container"></div> <!-- Aquí se insertará el footer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('footer_c.html')
+          .then(response => {
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            return response.text();
+          })
+          .then(data => document.getElementById('footer-container').innerHTML = data)
+          .catch(error => console.error('Error cargando el footer:', error));
+      });
+    </script>
+  <script src="/js/script_categorias.js"></script> <!-- Si tienes funcionalidades adicionales -->
+</body>
+</html>

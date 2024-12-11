@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 1</title>
+  <link rel="stylesheet" href="/css/categorias.css">
+  <link rel="stylesheet" href="/css/detonadoras.css">
+</head>
+<body>
+  <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+
+<div class="category-intro">
+  <div class="intro-text">
+      <h1 class="intro-title">Bienvenido a Nuestra Colección de Detonadoras</h1>
+      <p class="intro-description">
+          En esta sección encontrarás una selección de detonadoras diseñadas para satisfacer las necesidades de todos los entusiastas, desde principiantes hasta expertos. 
+          Ya sea que busques potencia, seguridad o tecnología avanzada, nuestras detonadoras garantizan calidad y desempeño en cualquier situación.
+      </p>
+      <p class="intro-highlight">
+          Explora modelos ideales para usos industriales, de seguridad o entretenimiento, respaldados por marcas líderes y estándares de clase mundial.
+      </p>
+  </div>
+  <div class="intro-image">
+      <img src="/assets/images/detonadoras (1).jpg" alt="Colección de Detonadoras">
+  </div>
+</div>
+<div id="products-container" class="products-container">
+  <!-- Producto 1 -->
+  <div class="product" data-name="Detonadora Modelo 1" data-id="1" data-price="500">
+      <img src="/assets/images/detonadora1.jpg" alt="Detonadora Modelo 1" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Revólver de Fogueo Colt Detective </h3>
+          <p class="card-description">Detonadora de alta precisión, ideal para trabajos industriales.</p>
+          <p class="card-price">S/500</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+  
+  <!-- Producto 2 -->
+  <div class="product" data-name="Detonadora Modelo 2" data-id="2" data-price="700">
+      <img src="/assets/images/detonadora2.jpg" alt="Detonadora Modelo 2" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Pistola de fogueo 1911 Colt Goverment </h3>
+          <p class="card-description">Diseñada para un uso prolongado, ideal para trabajos de demolición.</p>
+          <p class="card-price">S/700</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+
+  <!-- Producto 3 -->
+  <div class="product" data-name="Detonadora Modelo 3" data-id="3" data-price="900">
+      <img src="/assets/images/detonadora3.jpg" alt="Detonadora Modelo 3" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Revolver de fogueo Colt Detective</h3>
+          <p class="card-description">Detonadora de alto rendimiento para aplicaciones de seguridad y minería.</p>
+          <p class="card-price">S/900</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+
+  <!-- Producto 4 -->
+  <div class="product" data-name="Detonadora Modelo 4" data-id="4" data-price="1100">
+      <img src="/assets/images/detonadora4.jpg" alt="Detonadora Modelo 4" class="card-img">
+      <div class="card-content">
+          <h3 class="card-title">Pistola de fogueo S&W M&P9 9mm P.A.K.</h3>
+          <p class="card-description">Ideal para uso industrial, con características de seguridad avanzadas.</p>
+          <p class="card-price">S/1100</p>
+          <button class="buy-btn">Agregar al Carrito</button>
+      </div>
+  </div>
+</div> 
+
+    <div id="footer-container"></div> <!-- Aquí se insertará el footer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('footer_c.html')
+          .then(response => {
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            return response.text();
+          })
+          .then(data => document.getElementById('footer-container').innerHTML = data)
+          .catch(error => console.error('Error cargando el footer:', error));
+      });
+    </script>
+  <script src="/js/script_categorias.js"></script> <!-- Si tienes funcionalidades adicionales -->
+</body>
+</html>
