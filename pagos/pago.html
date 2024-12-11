@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago</title>
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/pagos.css">
+</head>
+<body>
+    <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar_pagos.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+  <script src="script.js"></script> <!-- Si tienes funcionalidades adicionales -->
+
+  <div class="container">
+
+    <!-- Resumen de productos en el carrito -->
+    <div class="order-summary">
+      <h2>Productos en el Carrito</h2>
+      <ul class="cart-items"></ul>
+      <div class="order-total">
+        <strong>Total: </strong><span class="total-amount">$0.00</span>
+      </div>
+    </div>
+
+    <!-- Selección de Método de Pago -->
+    <h2>Selecciona un Método de Pago</h2>
+    <div class="payment-options">
+      <button class="payment-btn" data-method="card">Tarjeta de Crédito/Débito</button>
+      <button class="payment-btn" data-method="paypal">PayPal</button>
+      <button class="payment-btn" data-method="transfer">Transferencia Bancaria</button>
+    </div>
+
+    <!-- Formulario de pago con tarjeta -->
+    <div id="card-form" class="payment-form hidden">
+      <h2>Pago con Tarjeta</h2>
+      <form>
+        <label for="card-number">Número de Tarjeta</label>
+        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+        <label for="expiry-date">Fecha de Expiración</label>
+        <input type="text" id="expiry-date" placeholder="MM/AA" required>
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" placeholder="123" required>
+        <button type="submit">Pagar</button>
+      </form>
+    </div>
+
+    <!-- Formulario de pago con PayPal -->
+    <div id="paypal-form" class="payment-form hidden">
+      <h2>Pago con PayPal</h2>
+      <p>Será redirigido a la página de PayPal para completar su transacción.</p>
+      <button onclick="redirectToPayPal()">Ir a PayPal</button>
+    </div>
+
+    <!-- Información de transferencia bancaria -->
+    <div id="transfer-form" class="payment-form hidden">
+      <h2>Transferencia Bancaria</h2>
+      <p>Por favor, transfiera el monto total a la siguiente cuenta:</p>
+      <ul>
+        <li><strong>Banco:</strong> Banco Ejemplo</li>
+        <li><strong>Cuenta:</strong> 1234567890</li>
+        <li><strong>Titular:</strong> Tienda de Armas S.A.</li>
+        <li><strong>Referencia:</strong> Número de Pedido</li>
+      </ul>
+      <p>Después de realizar la transferencia, envíe el comprobante a <strong>pagos@tienda.com</strong>.</p>
+    </div>
+  </div>
+
+  <script>
+    // Cargar los datos del carrito desde localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+      const cartItemsContainer = document.querySelector('.cart-items');
+      const totalAmount = document.querySelector('.total-amount');
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const total = localStorage.getItem('cartTotal') || 0;
+
+      // Mostrar productos en la lista
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price}`;
+        cartItemsContainer.appendChild(li);
+      });
+
+      // Actualizar total
+      totalAmount.textContent = `$${total}`;
+    });
+  </script>
+   <script src="/js/script.js"></script>
+</body>
+</html>

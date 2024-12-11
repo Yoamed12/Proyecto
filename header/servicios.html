@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 1</title>
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/servicios.css">
+</head>
+<body>
+  <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar_header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+  <script src="script.js"></script> <!-- Si tienes funcionalidades adicionales -->
+  <main>
+    <section class="hero">
+      <h1>Nuestros Servicios</h1>
+      <p>En nuestra tienda de armas, ofrecemos una variedad de servicios para garantizar que tus necesidades estén cubiertas con calidad y profesionalismo.</p>
+    </section>
+    <section class="services-container">
+      <div class="service-card">
+        <h2>Mantenimiento de Armas</h2>
+        <p>Ofrecemos limpieza, lubricación y revisión técnica para asegurar que tus armas estén siempre en óptimas condiciones.</p>
+      </div>
+      <div class="service-card">
+        <h2>Personalización de Armas</h2>
+        <p>Graba tu nombre, personaliza empuñaduras o agrega accesorios que se adapten a tus necesidades.</p>
+      </div>
+      <div class="service-card">
+        <h2>Venta de Municiones</h2>
+        <p>Disponemos de una amplia variedad de calibres y marcas de municiones al mejor precio.</p>
+      </div>
+      <div class="service-card">
+        <h2>Entrenamiento y Cursos</h2>
+        <p>Aprende técnicas de manejo seguro, defensa personal y uso avanzado de armas con expertos certificados.</p>
+      </div>
+      <div class="service-card">
+        <h2>Asesoramiento Legal</h2>
+        <p>Te ayudamos a entender las leyes y regulaciones relacionadas con la compra y el uso responsable de armas.</p>
+      </div>
+      <div class="service-card">
+        <h2>Compra y Venta de Armas Usadas</h2>
+        <p>Ofrecemos un servicio seguro para vender o adquirir armas de segunda mano con total confianza.</p>
+      </div>
+    </section>
+  <div id="footer-container"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('footer.html')
+        .then(response => {
+          if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+          return response.text();
+        })
+        .then(data => document.getElementById('footer-container').innerHTML = data)
+        .catch(error => console.error('Error cargando el footer:', error));
+    });
+  </script>
+  <script src="script.js"></script> <!-- Si tienes funcionalidades adicionales -->
+</body>
+</html>

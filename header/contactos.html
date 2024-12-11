@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 1</title>
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/contactos.css">
+</head>
+<body>
+  <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+
+  <main>
+     <!-- Hero Section -->
+  <section class="contact-hero">
+    <h1>Contáctanos</h1>
+    <p>Estamos aquí para ayudarte. ¡Ponte en contacto con nosotros!</p>
+  </section>
+
+  <!-- Información de Contacto -->
+  <section class="contact-info">
+    <h2>Información de Contacto</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Dirección</h3>
+        <p>La cano Lateral 4 Lote 133</p>
+      </div>
+      <div class="info-card">
+        <h3>Teléfono</h3>
+        <p>+51 965 330 372</p>
+      </div>
+      <div class="info-card">
+        <h3>Email</h3>
+        <p>joamegon3456@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de Contacto -->
+  <section class="contact-form">
+    <h2>Envíanos un Mensaje</h2>
+    <form action="#" method="POST">
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Enviar Mensaje</button>
+    </form>
+  </section>
+
+  <!-- Mapa -->
+  <section class="map">
+    <h2>Encuéntranos Aquí</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d122355.12802942937!2d-71.52621593188128!3d-16.59674311055586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2spe!4v1733625805686!5m2!1sen!2spe" 
+      width="100%" 
+      height="400" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+  </main>
+
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar_header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+  <script src="script.js"></script> <!-- Si tienes funcionalidades adicionales -->
+  <div id="footer-container"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('footer.html')
+        .then(response => {
+          if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+          return response.text();
+        })
+        .then(data => document.getElementById('footer-container').innerHTML = data)
+        .catch(error => console.error('Error cargando el footer:', error));
+    });
+  </script>
+  <script src="script.js"></script> <!-- Si tienes funcionalidades adicionales -->
+</body>
+</html>

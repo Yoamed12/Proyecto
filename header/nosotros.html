@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 1</title>
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/nosotros.css"> 
+</head>
+<body>
+  <div id="navbar"></div> <!-- Aquí se insertará el navbar -->
+
+  <script>
+    // Cargar el contenido de navbar.html
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar_header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el navbar:', error));
+    });
+  </script>
+  <script src="script.js"></script> <!-- Si tienes funcionalidades adicionales -->
+
+
+ <!-- Hero Section -->
+ <section class="about-hero">
+  <img src="/assets/images/como-escribir-web-sobre-nosotros (1).jpg" alt="Sobre Nosotros" class="about-hero-img">
+  <div class="about-hero-text">
+    <h1>Sobre Nosotros</h1>
+    <p>Comprometidos con la calidad, seguridad y profesionalismo en cada paso.</p>
+  </div>
+</section>
+
+<!-- Historia -->
+<section class="history">
+  <h2>Nuestra Historia</h2>
+  <p>
+    Fundada en 1990, nuestra tienda de armas ha sido pionera en ofrecer productos y servicios confiables a profesionales, entusiastas y coleccionistas. 
+    Nuestro objetivo es proporcionar la mejor experiencia y asesoramiento personalizado.
+  </p>
+  <img src="/assets/images/arma-re.png" alt="Nuestra historia" class="history-img">
+</section>
+
+<!-- Valores -->
+<section class="values">
+  <h2>Nuestros Valores</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <img src="/assets/images/integridad-e1571077683723-800x400.jpg" alt="Integridad">
+      <h3>Integridad</h3>
+      <p>Mantenemos los más altos estándares éticos en todo lo que hacemos.</p>
+    </div>
+    <div class="value-card">
+      <img src="/assets/images/seguridad.jpg" alt="Seguridad">
+      <h3>Seguridad</h3>
+      <p>La seguridad es nuestra prioridad número uno, desde la venta hasta el uso responsable.</p>
+    </div>
+    <div class="value-card">
+      <img src="/assets/images/innovacion-tecnologica.jpg" alt="Innovación">
+      <h3>Innovación</h3>
+      <p>Estamos siempre en la vanguardia de las últimas tecnologías en el sector.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Equipo -->
+<section class="team">
+  <h2>Conoce a Nuestro Equipo</h2>
+  <div class="team-grid">
+    <div class="team-member">
+      <img src="/assets/images/yo.jpeg" alt="Miembro del Equipo">
+      <h3>Joaquin Medina</h3>
+      <p>Gerente General</p>
+    </div>
+</section>
+
+  <div id="footer-container"></div> <!-- Aquí se insertará el navbar -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('footer.html')
+        .then(response => {
+          if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+          return response.text();
+        })
+        .then(data => document.getElementById('footer-container').innerHTML = data)
+        .catch(error => console.error('Error cargando el footer:', error));
+    });
+  </script>
+  <script src="script.js"></script> <!-- Si tienes funcionalidades adicionales -->
+
+
+</body>
+</html>
